@@ -5,7 +5,7 @@ import common from 'rollup-plugin-commonjs';
 import generatePackageJson from 'rollup-plugin-generate-package-json'
 
 export default {
-  input: 'projects/button/src/button.element.ts',
+  input: 'elements/button/src/button.element.ts',
   output: {
     file: 'dist/button.js',
     format: 'esm'

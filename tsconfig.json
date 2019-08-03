@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "projects",
+    "rootDir": "elements",
     "target": "es2017",
     "module": "esnext",
     "moduleResolution": "node",
