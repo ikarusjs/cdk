@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = ({ config }) => {
   config.module.rules.push(
     {
@@ -6,7 +8,18 @@ module.exports = ({ config }) => {
     },
     {
       test: /\.css|\.s([ca])ss$/,
-      use: [{ loader: 'lit-scss-loader' }, 'extract-loader', 'css-loader', 'sass-loader']
+      use: [
+        'lit-scss-loader',
+        'extract-loader',
+        'css-loader',
+        'resolve-url-loader',
+        {
+          loader: "sass-loader",
+          options: {
+            includePaths: [path.resolve(__dirname, '../node_modules')]
+          }
+        }
+      ]
     }
   );
   config.resolve.extensions.push('.ts');

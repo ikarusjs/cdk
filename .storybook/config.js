@@ -3,7 +3,7 @@ import { withNotes } from '@storybook/addon-notes';
 import { withKnobs } from '@storybook/addon-knobs';
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../projects', true, /\.stories\.ts$/);
+const req = require.context('../src/elements', true, /\.stories\.ts$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));

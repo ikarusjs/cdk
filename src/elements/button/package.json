@@ -1,0 +1,9 @@
+{
+  "name": "@eca/button",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@material/button": "^3.1.0",
+    "@material/ripple": "^3.1.0"
+  }
+}
