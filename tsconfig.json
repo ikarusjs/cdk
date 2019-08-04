@@ -3,19 +3,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src",
-    "target": "es2017",
-    "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "node",
+    "module": "esnext",
     "sourceMap": false,
-    "declaration": true,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "lib": [
-      "es5",
-      "es6",
-      "dom"
-    ],
     "typeRoots": [
       "node_modules/@types"
     ]
