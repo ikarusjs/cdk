@@ -1,13 +1,26 @@
-const GeneratePackageJsonPlugin = require('generate-package-json-webpack-plugin');
-const path = require('path');
+const [
+	path,
+	fs,
+	packageJsonPlugin
+] = [
+		require('path'),
+		require('fs'),
+		require('generate-package-json-webpack-plugin')
+	];
 
 module.exports = (env) => {
-	const name = env.name || 'button';
+	const ikarusSettings = JSON.parse(fs.readFileSync('ikarus.json', 'utf8'));
+
+	const name = env.name || '';
 	const version = env.version || '0.0.0';
 	const description = env.description || '';
+	const scope = ikarusSettings.scope || '@ikarus';
+	const root = ikarusSettings.root || 'src';
+	const elements = ikarusSettings.elements || 'elements';
+	const dist = ikarusSettings.dist || 'dist';
 
 	const basePackageValues = {
-		'name': `@ikarus/${name}`,
+		'name': `${scope}/${name}`,
 		'main': `${name}.js`,
 		'module': `${name}.js`,
 		version,
@@ -17,11 +30,11 @@ module.exports = (env) => {
 	const versionsPackageFilename = __dirname + '/package.json';
 
 	return {
-		entry: `./src/elements/${name}/lib/element.ts`,
+		entry: `./${root}/${elements}/${name}/lib/element.ts`,
 		output: {
-			path: path.resolve(`dist/${name}`),
+			path: path.resolve(`${dist}/${name}`),
 			filename: `${name}.js`,
-			library: `ikarus${name.charAt(0).toUpperCase() + name.slice(1)}`,
+			library: `${scope.replace('@', '')}${name.charAt(0).toUpperCase() + name.slice(1)}`,
 			libraryTarget: 'umd'
 		},
 		mode: 'production',
@@ -71,10 +84,10 @@ module.exports = (env) => {
 		},
 		optimization: {
 			nodeEnv: 'prodction',
-			minimize: false
+			minimize: true
 		},
 		plugins: [
-			new GeneratePackageJsonPlugin(basePackageValues, versionsPackageFilename)
+			new packageJsonPlugin(basePackageValues, versionsPackageFilename)
 		]
 	}
 }
