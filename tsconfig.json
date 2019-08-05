@@ -2,23 +2,23 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "elements",
-    "target": "es2017",
-    "module": "esnext",
+    "rootDir": "src",
+    "target": "esnext",
     "moduleResolution": "node",
+    "module": "esnext",
     "sourceMap": false,
-    "declaration": true,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "lib": [
-      "es5",
-      "es6",
-      "dom"
-    ],
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "@ikarus/core": [
+        "core"
+      ]
+    }
   },
   "exclude": [
     "node_modules"

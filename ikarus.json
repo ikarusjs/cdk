@@ -1,0 +1,6 @@
+{
+  "scope": "@ikarus",
+  "root": "src",
+  "elements": "elements",
+  "dis": "dist"
+}
