@@ -3,12 +3,12 @@
 =============== */
 
 a {
-    text-decoration: none;
-    color: $link-color;
-    transition: $global-transition;
+  text-decoration: none;
+  color: $link-color;
+  transition: $global-transition;
 
-    &:hover {
-        color: $link-color-hover;
-    }
+  &:hover {
+    color: $link-color-hover;
+  }
 
 }
