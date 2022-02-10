@@ -21,7 +21,7 @@
     "css-loader": "^3.1.0",
     "extract-loader": "^3.1.0",
     "lit-scss-loader": "^1.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "rollup": "^1.18.0",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-generate-package-json": "^3.1.3",
